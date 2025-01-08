@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';  
 import axios from 'axios';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -76,6 +77,11 @@ const Login = () => {
         </form>
 
         {error && <div className="text-red-500 text-center mt-3">{error}</div>} {/* Display error */}
+
+        {/* Register Link */}
+        <div className="text-center mt-4">
+          <p className="text-gray-600">Don't have an account? <Link to="/register" className="text-indigo-600 hover:text-indigo-700">Register here</Link></p>
+        </div>
       </div>
     </section>
   );
